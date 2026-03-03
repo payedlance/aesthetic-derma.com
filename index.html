@@ -18,20 +18,9 @@
             <a href="index.html" class="logo"><img src="logo.png" alt="Aesthetic Derama" class="logo-img"></a>
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html" data-lang-en="Home" data-lang-my="Laman Utama">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#services" data-lang-en="Services" data-lang-my="Perkhidmatan">Services</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="slimming.html" data-lang-en="Slimming"
-                                    data-lang-my="Melangsingkan Badan">Slimming</a></li>
-                            <li><a href="eyelid-lifting.html" data-lang-en="Eyelid Lifting"
-                                    data-lang-my="Angkat Kelopak Mata">Eyelid Lifting</a></li>
-                            <li><a href="plasma-fibroblast.html" data-lang-en="Plasma Fibroblast"
-                                    data-lang-my="Plasma Fibroblast">Plasma Fibroblast</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#about" data-lang-en="About" data-lang-my="Tentang Kami">About</a></li>
-                    <li><a href="#contact" data-lang-en="Contact" data-lang-my="Hubungi">Contact</a></li>
+                    <li><a href="slimming.html" data-lang-en="Slimming" data-lang-my="Melangsingkan Badan">Slimming</a></li>
+                    <li><a href="eyelid-lifting.html" data-lang-en="Eyelid Lifting" data-lang-my="Angkat Kelopak Mata">Eyelid Lifting</a></li>
+                    <li><a href="plasma-fibroblast.html" data-lang-en="Plasma Fibroblast" data-lang-my="Plasma Fibroblast">Plasma Fibroblast</a></li>
                 </ul>
             </nav>
             <div style="display: flex; gap: 1rem; align-items: center;">
@@ -72,7 +61,7 @@
         <div class="container">
             <h2 class="intro-quote italic"
                 data-lang-en="​Permanently eliminate stubborn fat and tighten your skin with advanced, non-invasive ultrasound contouring. No needles, no downtime—just natural, long-lasting results for your chin, arms, belly, and back."
-                data-lang-my="&ldquo;Di mana sains bertemu kecantikan, dan setiap wanita menemui cahayanya.&rdquo;">
+                data-lang-my="Berat menghilangkan lemak degil dan mengencangkan kulit anda dengan kontur ultrasound bukan invasif yang canggih. Tiada jarum, tiada masa pemulihan—hanya hasil semula jadi yang berpanjangan untuk dagu, lengan, perut, dan belakang.">
                 "Where science meets beauty, and every woman finds her glow."</h2>
             <div class="stats-grid">
                 <div class="stat-item">
@@ -171,39 +160,45 @@
             <div class="gallery-grid">
                 <!-- Gallery Item: Slimming -->
                 <div class="gallery-item" data-category="slimming">
-                    <div class="compare-slider">
-                        <img src="https://placehold.co/600x400/0D1B2A/C9A84C?text=After" alt="After Slimming"
-                            class="slider-after" loading="lazy">
-                        <div class="slider-before" style="width: 50%;">
-                            <img style="width: 200%;" src="https://placehold.co/600x400/C9A84C/0D1B2A?text=Before"
-                                alt="Before Slimming" loading="lazy">
+                    <div style="display: flex; gap: 5px;">
+                        <div style="flex: 1; position: relative;">
+                            <img src="https://placehold.co/300x400/0D1B2A/C9A84C?text=Before" alt="Before Slimming" style="width: 100%; height: 200px; object-fit: cover;">
+                            <span style="position: absolute; top: 10px; left: 10px; background: var(--color-navy); color: var(--color-gold); padding: 4px 12px; font-size: 0.8rem;">Before</span>
                         </div>
-                        <div class="slider-handle" style="left: 50%;"></div>
+                        <div style="flex: 1; position: relative;">
+                            <img src="https://placehold.co/300x400/C9A84C/0D1B2A?text=After" alt="After Slimming" style="width: 100%; height: 200px; object-fit: cover;">
+                            <span style="position: absolute; top: 10px; right: 10px; background: var(--color-gold); color: var(--color-navy); padding: 4px 12px; font-size: 0.8rem;">After</span>
+                        </div>
                     </div>
+                    <p style="text-align: center; margin-top: 0.75rem; font-size: 0.9rem;">Slimming</p>
                 </div>
                 <!-- Gallery Item: Eyelid -->
                 <div class="gallery-item" data-category="eyelid">
-                    <div class="compare-slider">
-                        <img src="https://placehold.co/600x400/0D1B2A/C9A84C?text=After" alt="After Eyelid"
-                            class="slider-after" loading="lazy">
-                        <div class="slider-before" style="width: 50%;">
-                            <img style="width: 200%;" src="https://placehold.co/600x400/C9A84C/0D1B2A?text=Before"
-                                alt="Before Eyelid" loading="lazy">
+                    <div style="display: flex; gap: 5px;">
+                        <div style="flex: 1; position: relative;">
+                            <img src="https://placehold.co/300x400/0D1B2A/C9A84C?text=Before" alt="Before Eyelid" style="width: 100%; height: 200px; object-fit: cover;">
+                            <span style="position: absolute; top: 10px; left: 10px; background: var(--color-navy); color: var(--color-gold); padding: 4px 12px; font-size: 0.8rem;">Before</span>
                         </div>
-                        <div class="slider-handle" style="left: 50%;"></div>
+                        <div style="flex: 1; position: relative;">
+                            <img src="https://placehold.co/300x400/C9A84C/0D1B2A?text=After" alt="After Eyelid" style="width: 100%; height: 200px; object-fit: cover;">
+                            <span style="position: absolute; top: 10px; right: 10px; background: var(--color-gold); color: var(--color-navy); padding: 4px 12px; font-size: 0.8rem;">After</span>
+                        </div>
                     </div>
+                    <p style="text-align: center; margin-top: 0.75rem; font-size: 0.9rem;">Eyelid Lifting</p>
                 </div>
                 <!-- Gallery Item: Plasma -->
                 <div class="gallery-item" data-category="plasma">
-                    <div class="compare-slider">
-                        <img src="https://placehold.co/600x400/0D1B2A/C9A84C?text=After" alt="After Plasma"
-                            class="slider-after" loading="lazy">
-                        <div class="slider-before" style="width: 50%;">
-                            <img style="width: 200%;" src="https://placehold.co/600x400/C9A84C/0D1B2A?text=Before"
-                                alt="Before Plasma" loading="lazy">
+                    <div style="display: flex; gap: 5px;">
+                        <div style="flex: 1; position: relative;">
+                            <img src="https://placehold.co/300x400/0D1B2A/C9A84C?text=Before" alt="Before Plasma" style="width: 100%; height: 200px; object-fit: cover;">
+                            <span style="position: absolute; top: 10px; left: 10px; background: var(--color-navy); color: var(--color-gold); padding: 4px 12px; font-size: 0.8rem;">Before</span>
                         </div>
-                        <div class="slider-handle" style="left: 50%;"></div>
+                        <div style="flex: 1; position: relative;">
+                            <img src="https://placehold.co/300x400/C9A84C/0D1B2A?text=After" alt="After Plasma" style="width: 100%; height: 200px; object-fit: cover;">
+                            <span style="position: absolute; top: 10px; right: 10px; background: var(--color-gold); color: var(--color-navy); padding: 4px 12px; font-size: 0.8rem;">After</span>
+                        </div>
                     </div>
+                    <p style="text-align: center; margin-top: 0.75rem; font-size: 0.9rem;">Plasma Fibroblast</p>
                 </div>
             </div>
         </div>
