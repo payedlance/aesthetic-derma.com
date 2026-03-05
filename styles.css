@@ -5,7 +5,7 @@
     --color-whiteish: #FDFDFD;
     --color-gold: #C9A84C;
     --color-gold-light: rgba(201, 168, 76, 0.2);
-    --color-navy: #0D1B2A;
+    --color-navy: rgb(11, 26, 46);
     --color-navy-mid: #162840;
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Jost', sans-serif;
@@ -462,14 +462,29 @@ section {
     opacity: 0.3;
 }
 
-/* Divider position when text is on the right (default) */
+/* Divider position when text is on the right (Section 2 on desktop) */
+.about-grid-reverse .about-content::before,
 .about-grid>.about-image+.about-content::before {
     left: -2rem;
+    right: auto;
 }
 
-/* Divider position when text is on the left */
-.about-grid>.about-content:first-child::before {
+/* Divider position when text is on the left (Section 1 & 3 on desktop) */
+.about-grid>.about-content:first-child:not(.about-grid-reverse .about-content)::before {
     right: -2rem;
+    left: auto;
+}
+
+@media (min-width: 769px) {
+    .about-grid-reverse .about-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content::before {
+        display: none;
+    }
 }
 
 .about-content h2 {
@@ -852,8 +867,8 @@ footer {
 /* Service Page Specifics */
 .service-hero {
     position: relative;
-    height: 60vh;
-    min-height: 400px;
+    height: 70vh;
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -861,6 +876,8 @@ footer {
     color: var(--color-ivory);
     background-size: cover;
     background-position: center;
+    padding-top: 80px;
+    /* Account for fixed header */
 }
 
 .service-hero-overlay {
