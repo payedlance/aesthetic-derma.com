@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Aesthetic Derama</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="bg-navy">
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Aesthetic Derama</a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" data-lang-en="Home" data-lang-my="Laman Utama">Home</a></li>
+                    <li><a href="blog.html" data-lang-en="Blog" data-lang-my="Blog">Blog</a></li>
+                    <li class="dropdown">
+                        <a href="plasma-fibroblast.html" data-lang-en="Plasma Fibroblast" data-lang-my="Plasma Fibroblast">Plasma Fibroblast</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="plasma-fibroblast.html#eyelid" data-lang-en="Eyelid Lifting" data-lang-my="Angkat Kelopak Mata">Eyelid Lifting</a></li>
+                            <li><a href="plasma-fibroblast.html#eyebags" data-lang-en="Eye bags Removal" data-lang-my="Menghilangkan Beg Mata">Eye bags Removal</a></li>
+                            <li><a href="plasma-fibroblast.html#scars" data-lang-en="Scar Removal" data-lang-my="Menghilangkan Parut">Scar Removal</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="slimming.html" data-lang-en="Slimming" data-lang-my="Melangsingkan Badan">Slimming</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="slimming.html#double-chin" data-lang-en="Double Chin" data-lang-my="Dagu Berlapis">Double Chin</a></li>
+                            <li><a href="slimming.html#arms-legs" data-lang-en="Arms & Legs" data-lang-my="Lengan & Kaki">Arms & Legs</a></li>
+                            <li><a href="slimming.html#tummy" data-lang-en="Tummy / Belly" data-lang-my="Perut">Tummy / Belly</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div style="display: flex; gap: 1.5rem; align-items: center;">
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-set-lang="EN">EN</button> | <button class="lang-btn"
+                        data-set-lang="MY">MY</button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="service-hero" style="height: 40vh; min-height: 300px; background-image: url('https://placehold.co/1920x600/0D1B2A/C9A84C?text=Our+Blog');">
+        <div class="service-hero-overlay"></div>
+        <div class="service-hero-content reveal">
+            <h1 class="italic" data-lang-en="Our Blog" data-lang-my="Blog Kami">Our Blog</h1>
+            <p data-lang-en="Insights, news, and tips from our aesthetic experts" data-lang-my="Wawasan, berita, dan petua daripada pakar estetik kami">Insights, news, and tips from our aesthetic experts</p>
+        </div>
+    </section>
+
+    <section class="bg-white" style="padding: 5rem 0; min-height: 60vh;">
+        <div class="container">
+            <div id="blog-posts-container" class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2.5rem;">
+                <!-- Blog posts will be loaded here -->
+                <div class="loading-spinner" style="text-align: center; grid-column: 1 / -1;">
+                    <p data-lang-en="Loading blog posts..." data-lang-my="Memuatkan coretan blog...">Loading blog posts...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Aesthetic Derama</a>
+                    <p data-lang-en="Love Your Reflection Again" data-lang-my="Cintai Pantulan Anda Kembali">Love Your Reflection Again</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-en="Quick Links" data-lang-my="Pautan Pantas">Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html" data-lang-en="Home" data-lang-my="Laman Utama">Home</a></li>
+                        <li><a href="index.html#about" data-lang-en="About Us" data-lang-my="Tentang Kami">About Us</a></li>
+                        <li><a href="index.html#faq" data-lang-en="FAQs" data-lang-my="Soalan Lazim">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-en="Services" data-lang-my="Perkhidmatan">Services</h4>
+                    <ul>
+                        <li><a href="slimming.html" data-lang-en="Slimming" data-lang-my="Melangsingkan Badan">Slimming</a></li>
+                        <li><a href="plasma-fibroblast.html" data-lang-en="Plasma Fibroblast" data-lang-my="Plasma Fibroblast">Plasma Fibroblast</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-en="Contact Info" data-lang-my="Maklumat Perhubungan">Contact Info</h4>
+                    <ul>
+                        <li><a href="#">[PLACEHOLDER ADDRESS]</a></li>
+                        <li><a href="#">[PLACEHOLDER PHONE]</a></li>
+                        <li><a href="mailto:[PLACEHOLDER EMAIL]">[PLACEHOLDER EMAIL]</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aesthetic Derama. <span data-lang-en="All rights reserved." data-lang-my="Hak cipta terpelihara.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const blogContainer = document.getElementById('blog-posts-container');
+            
+            async function loadPosts() {
+                try {
+                    // For local development or simple static hosting, we use a manual list
+                    // or fetch from the folder if the server allows directory listing.
+                    // For GitHub Pages, the best way without a build step is to use the GitHub API
+                    // to list files in content/blog.
+                    
+                    // Fallback posts for demonstration if API fails or repo not set
+                    const fallbackPosts = [
+                        { slug: 'welcome-en', lang: 'en' },
+                        { slug: 'welcome-my', lang: 'my' },
+                        { slug: 'lip-rejuvenation-en', lang: 'en' },
+                        { slug: 'lip-rejuvenation-my', lang: 'my' },
+                        { slug: 'non-surgical-facelift-en', lang: 'en' },
+                        { slug: 'non-surgical-facelift-my', lang: 'my' }
+                    ];
+
+                    const currentLang = localStorage.getItem('ad_lang')?.toLowerCase() || 'en';
+                    blogContainer.innerHTML = '';
+                    
+                    // In real production, you'd replace this with a dynamic fetch from GitHub API
+                    // For now, we manually load the slugs we know exist
+                    const postsToLoad = fallbackPosts.filter(p => p.lang === currentLang);
+                    
+                    if (postsToLoad.length === 0) {
+                        blogContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">No posts found in this language.</p>';
+                        return;
+                    }
+
+                    for (const p of postsToLoad) {
+                        try {
+                            const response = await fetch(`content/blog/${p.slug}.md`);
+                            if (!response.ok) {
+                                console.warn(`Could not fetch ${p.slug}.md`);
+                                continue;
+                            }
+                            const text = await response.text();
+                            
+                            // Simple frontmatter parser
+                            const parts = text.split('---');
+                            if (parts.length >= 3) {
+                                const yaml = parts[1];
+                                const content = parts.slice(2).join('---');
+                                
+                                // Ensure jsyaml is available
+                                const jsyamlLib = window.jsyaml || jsyaml;
+                                if (!jsyamlLib) {
+                                    throw new Error("js-yaml library not loaded");
+                                }
+                                
+                                const data = jsyamlLib.load(yaml);
+                                
+                                renderPostCard({
+                                    ...data,
+                                    slug: p.slug
+                                });
+                            }
+                        } catch (e) {
+                            console.error("Failed to load post:", p.slug, e);
+                        }
+                    }
+                    
+                    // If after loop container is still showing spinner or empty
+                    if (blogContainer.innerHTML === '') {
+                        blogContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">No posts available to display.</p>';
+                    }
+                } catch (err) {
+                    blogContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Unable to load posts at this time.</p>';
+                }
+            }
+            
+            function renderPostCard(post) {
+                const card = document.createElement('div');
+                card.className = 'blog-card reveal active';
+                
+                card.innerHTML = `
+                    <img src="${post.thumbnail}" alt="${post.title}">
+                    <div class="blog-card-content">
+                        <span class="blog-card-date">${new Date(post.date).toLocaleDateString()}</span>
+                        <h3>${post.title}</h3>
+                        <p>${post.excerpt}</p>
+                        <a href="blog-post.html?post=${post.slug}" class="btn btn-outline" style="align-self: flex-start;">Read More</a>
+                    </div>
+                `;
+                blogContainer.appendChild(card);
+            }
+            
+            loadPosts();
+            
+            // Re-render when language changes
+            window.addEventListener('storage', (e) => {
+                if (e.key === 'ad_lang') {
+                    loadPosts();
+                }
+            });
+            // Also listen for clicks on lang buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    setTimeout(loadPosts, 100);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

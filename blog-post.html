@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - Aesthetic Derama</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        .blog-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        .blog-content h1, .blog-content h2, .blog-content h3 {
+            color: var(--color-gold);
+            margin: 2rem 0 1rem;
+            font-family: var(--font-heading);
+        }
+        .blog-content p {
+            margin-bottom: 1.5rem;
+            color: rgba(250, 247, 242, 0.9);
+        }
+        .blog-post-header {
+            text-align: center;
+            padding: 8rem 0 4rem;
+            background-color: var(--color-navy);
+            color: var(--color-ivory);
+        }
+    </style>
+</head>
+<body class="bg-navy-mid">
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Aesthetic Derama</a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" data-lang-en="Home" data-lang-my="Laman Utama">Home</a></li>
+                    <li><a href="blog.html" data-lang-en="Blog" data-lang-my="Blog">Blog</a></li>
+                    <li class="dropdown">
+                        <a href="plasma-fibroblast.html" data-lang-en="Plasma Fibroblast" data-lang-my="Plasma Fibroblast">Plasma Fibroblast</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="plasma-fibroblast.html#eyelid" data-lang-en="Eyelid Lifting" data-lang-my="Angkat Kelopak Mata">Eyelid Lifting</a></li>
+                            <li><a href="plasma-fibroblast.html#eyebags" data-lang-en="Eye bags Removal" data-lang-my="Menghilangkan Beg Mata">Eye bags Removal</a></li>
+                            <li><a href="plasma-fibroblast.html#scars" data-lang-en="Scar Removal" data-lang-my="Menghilangkan Parut">Scar Removal</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="slimming.html" data-lang-en="Slimming" data-lang-my="Melangsingkan Badan">Slimming</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="slimming.html#double-chin" data-lang-en="Double Chin" data-lang-my="Dagu Berlapis">Double Chin</a></li>
+                            <li><a href="slimming.html#arms-legs" data-lang-en="Arms & Legs" data-lang-my="Lengan & Kaki">Arms & Legs</a></li>
+                            <li><a href="slimming.html#tummy" data-lang-en="Tummy / Belly" data-lang-my="Perut">Tummy / Belly</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div style="display: flex; gap: 1.5rem; align-items: center;">
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-set-lang="EN">EN</button> | <button class="lang-btn"
+                        data-set-lang="MY">MY</button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <article id="blog-post-container" class="bg-white" style="color: var(--color-navy); padding-bottom: 5rem;">
+        <div id="post-header" class="blog-post-header">
+            <div class="container">
+                <span id="post-date" style="color: var(--color-gold); font-size: 1rem; text-transform: uppercase; letter-spacing: 2px;"></span>
+                <h1 id="post-title" class="italic" style="font-size: 3rem; margin: 1rem 0; color: var(--color-gold); font-family: var(--font-heading);">Loading Post...</h1>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div id="post-thumbnail-container" style="margin: -2rem auto 4rem; max-width: 1000px; position: relative; z-index: 2;">
+                <img id="post-thumbnail" src="" alt="" style="width: 100%; border-radius: var(--radius); box-shadow: 0 20px 50px rgba(0,0,0,0.2); display: none;">
+            </div>
+            
+            <div id="post-body" class="blog-content" style="color: var(--color-navy) !important;">
+                <!-- Post content will be injected here -->
+            </div>
+        </div>
+    </article>
+
+    <section class="cta-banner reveal bg-navy">
+        <div class="container">
+            <h2 class="italic" data-lang-en="Want to know more?" data-lang-my="Ingin tahu lebih lanjut?">Want to know more?</h2>
+            <p data-lang-en="Chat with our experts today for a personalised consultation." data-lang-my="Berbual dengan pakar kami hari ini untuk perundingan yang diperibadikan.">Chat with our experts today for a personalised consultation.</p>
+            <div class="cta-btns">
+                <a href="https://wa.me/[PLACEHOLDER_NUMBER]" class="btn btn-primary" data-lang-en="WhatsApp Us" data-lang-my="WhatsApp Kami">WhatsApp Us</a>
+                <a href="blog.html" class="btn btn-outline" data-lang-en="Back to Blog" data-lang-my="Kembali ke Blog">Back to Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Aesthetic Derama</a>
+                    <p data-lang-en="Love Your Reflection Again" data-lang-my="Cintai Pantulan Anda Kembali">Love Your Reflection Again</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aesthetic Derama. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postSlug = urlParams.get('post');
+            
+            if (!postSlug) {
+                window.location.href = 'blog.html';
+                return;
+            }
+            
+            async function loadPost() {
+                try {
+                    const response = await fetch(`content/blog/${postSlug}.md`);
+                    const text = await response.text();
+                    
+                    // Simple frontmatter parser
+                    const parts = text.split('---');
+                    if (parts.length >= 3) {
+                        const yaml = parts[1];
+                        const content = parts.slice(2).join('---');
+                        
+                        // Ensure jsyaml is available
+                        const jsyamlLib = window.jsyaml || jsyaml;
+                        if (!jsyamlLib) {
+                            throw new Error("js-yaml library not loaded");
+                        }
+                        
+                        const data = jsyamlLib.load(yaml);
+                        
+                        document.getElementById('post-title').innerText = data.title;
+                        document.getElementById('post-date').innerText = new Date(data.date).toLocaleDateString(undefined, {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                        
+                        if (data.thumbnail) {
+                            const img = document.getElementById('post-thumbnail');
+                            img.src = data.thumbnail;
+                            img.style.display = 'block';
+                            img.alt = data.title;
+                        }
+                        
+                        document.getElementById('post-body').innerHTML = marked.parse(content);
+                    }
+                } catch (err) {
+                    console.error("Error loading blog post:", err);
+                    document.getElementById('post-title').innerText = "Post Not Found";
+                    document.getElementById('post-body').innerHTML = "<p style='text-align: center; padding: 3rem;'>The blog post you're looking for could not be found or there was an error loading it.</p>";
+                }
+            }
+            
+            loadPost();
+        });
+    </script>
+</body>
+</html>
