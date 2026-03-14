@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         .blog-content {
@@ -26,10 +26,33 @@
             color: rgba(250, 247, 242, 0.9);
         }
         .blog-post-header {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 8rem 0 4rem;
-            background-color: var(--color-navy);
             color: var(--color-ivory);
+            overflow: visible;
+        }
+        .blog-post-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60vh;
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+        .blog-post-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60vh;
+            background: linear-gradient(to top, rgba(13, 27, 42, 0.8) 0%, rgba(13, 27, 42, 0.4) 100%);
+            z-index: -1;
         }
     </style>
 </head>
@@ -70,11 +93,17 @@
         </div>
     </header>
 
-    <article id="blog-post-container" class="bg-white" style="color: var(--color-navy); padding-bottom: 5rem;">
-        <div id="post-header" class="blog-post-header">
-            <div class="container">
-                <span id="post-date" style="color: var(--color-gold); font-size: 1rem; text-transform: uppercase; letter-spacing: 2px;"></span>
-                <h1 id="post-title" class="italic" style="font-size: 3rem; margin: 1rem 0; color: var(--color-gold); font-family: var(--font-heading);">Loading Post...</h1>
+    <article id="blog-post-container" style="color: var(--color-navy); padding-bottom: 5rem;">
+        <div class="hero-parallax-container" style="height: 150vh;">
+            <div class="hero-sticky-bg hero-blog" style="height: 60vh;">
+                <div class="hero-overlay"></div>
+                <div class="scroll-indicator">▾</div>
+            </div>
+            <div class="hero-content-reveal reveal" style="top: 60vh; height: 60vh;">
+                <div class="container" style="position: relative; z-index: 1;">
+                    <span id="post-date" style="color: var(--color-gold); font-size: 1rem; text-transform: uppercase; letter-spacing: 2px;"></span>
+                    <h1 id="post-title" style="font-size: 2.5rem; margin: 1rem 0; color: var(--color-gold); font-family: var(--font-heading);">Loading Post...</h1>
+                </div>
             </div>
         </div>
         
@@ -89,9 +118,9 @@
         </div>
     </article>
 
-    <section class="cta-banner reveal bg-navy">
+    <section class="cta-banner reveal">
         <div class="container">
-            <h2 class="italic" data-lang-en="Want to know more?" data-lang-my="Ingin tahu lebih lanjut?">Want to know more?</h2>
+            <h2 data-lang-en="Want to know more?" data-lang-my="Ingin tahu lebih lanjut?">Want to know more?</h2>
             <p data-lang-en="Chat with our experts today for a personalised consultation." data-lang-my="Berbual dengan pakar kami hari ini untuk perundingan yang diperibadikan.">Chat with our experts today for a personalised consultation.</p>
             <div class="cta-btns">
                 <a href="https://wa.me/601139026535?text=Hello%2C%20I%27d%20like%20to%20contact%20you" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-lang-en="WhatsApp Us" data-lang-my="WhatsApp Kami">WhatsApp Us</a>

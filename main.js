@@ -123,28 +123,89 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /*
-     * Gallery Filtering Logic
+     * Gallery Filtering & Carousel Logic
      */
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    const gallerySlider = document.getElementById('gallery-slider');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dotsContainer = document.querySelector('.gallery-dots');
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class
-            filterBtns.forEach(f => f.classList.remove('active'));
-            btn.classList.add('active');
+    if (gallerySlider) {
+        let currentSlide = 0;
+        let visibleItems = [];
 
-            const filter = btn.dataset.filter;
+        function updateCarousel() {
+            const allItems = gallerySlider.querySelectorAll('.gallery-carousel-item');
+            const activeFilterButton = document.querySelector('.filter-btn.active');
+            const activeFilter = activeFilterButton ? activeFilterButton.dataset.filter : 'all';
 
-            galleryItems.forEach(item => {
-                if (filter === 'all' || item.dataset.category === filter) {
+            visibleItems = Array.from(allItems).filter(item => {
+                if (activeFilter === 'all' || item.dataset.category === activeFilter) {
                     item.style.display = 'block';
+                    return true;
                 } else {
                     item.style.display = 'none';
+                    return false;
                 }
             });
+
+            // Reset to first slide on filter change if current slide is out of bounds
+            if (currentSlide >= visibleItems.length) currentSlide = 0;
+
+            // Update transform
+            gallerySlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // Update dots
+            if (dotsContainer) {
+                dotsContainer.innerHTML = '';
+                visibleItems.forEach((_, index) => {
+                    const dot = document.createElement('button');
+                    dot.classList.add('gallery-dot');
+                    if (index === currentSlide) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        currentSlide = index;
+                        updateCarousel();
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+            }
+
+            // Update buttons
+            if (prevBtn) prevBtn.disabled = currentSlide === 0;
+            if (nextBtn) nextBtn.disabled = currentSlide === visibleItems.length - 1 || visibleItems.length <= 1;
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateCarousel();
+                }
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < visibleItems.length - 1) {
+                    currentSlide++;
+                    updateCarousel();
+                }
+            });
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentSlide = 0;
+                updateCarousel();
+            });
         });
-    });
+
+        // Initial setup
+        updateCarousel();
+    }
 
     /*
      * Mobile Menu Logic
@@ -167,5 +228,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    /*
+     * Scroll Indicator Click Logic
+     */
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', () => {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+    }
 
 });
