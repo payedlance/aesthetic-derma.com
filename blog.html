@@ -13,7 +13,7 @@
 <body class="bg-navy">
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">Aesthetic Derama</a>
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Aesthetic Derama" class="logo-img"></a>
             <nav class="main-nav">
                 <ul class="nav-links">
                     <li><a href="index.html" data-lang-en="Home" data-lang-my="Laman Utama">Home</a></li>
@@ -92,7 +92,7 @@
                     <h4 data-lang-en="Contact Info" data-lang-my="Maklumat Perhubungan">Contact Info</h4>
                     <ul>
                         <li><a href="#">[PLACEHOLDER ADDRESS]</a></li>
-                        <li><a href="#">[PLACEHOLDER PHONE]</a></li>
+                        <li><a href="tel:+601139026535">+60 11-3902 6535</a></li>
                         <li><a href="mailto:[PLACEHOLDER EMAIL]">[PLACEHOLDER EMAIL]</a></li>
                     </ul>
                 </div>
@@ -126,18 +126,23 @@
                         { slug: 'non-surgical-facelift-my', lang: 'my' }
                     ];
 
-                    const currentLang = localStorage.getItem('ad_lang')?.toLowerCase() || 'en';
-                    blogContainer.innerHTML = '';
+                    let currentLang = (localStorage.getItem('ad_lang') || 'EN').toLowerCase();
+                    // Fallback to 'en' if not 'en' or 'my'
+                    if (currentLang !== 'en' && currentLang !== 'my') currentLang = 'en';
                     
-                    // In real production, you'd replace this with a dynamic fetch from GitHub API
-                    // For now, we manually load the slugs we know exist
-                    const postsToLoad = fallbackPosts.filter(p => p.lang === currentLang);
+                    console.log("Loading blog posts. Target lang:", currentLang);
+
+                    blogContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Loading posts...</p>';
+                    
+                    const postsToLoad = fallbackPosts.filter(p => p.slug.endsWith(`-${currentLang}`));
                     
                     if (postsToLoad.length === 0) {
-                        blogContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">No posts found in this language.</p>';
+                        blogContainer.innerHTML = `<p style="grid-column: 1/-1; text-align: center;">No posts found for language: ${currentLang.toUpperCase()}</p>`;
                         return;
                     }
 
+                    blogContainer.innerHTML = ''; // Clear loading message
+                    let loadedCount = 0;
                     for (const p of postsToLoad) {
                         try {
                             const response = await fetch(`content/blog/${p.slug}.md`);
@@ -165,15 +170,15 @@
                                     ...data,
                                     slug: p.slug
                                 });
+                                loadedCount++;
                             }
                         } catch (e) {
                             console.error("Failed to load post:", p.slug, e);
                         }
                     }
                     
-                    // If after loop container is still showing spinner or empty
-                    if (blogContainer.innerHTML === '') {
-                        blogContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">No posts available to display.</p>';
+                    if (loadedCount === 0) {
+                        blogContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Unable to load content. Please check your internet connection.</p>';
                     }
                 } catch (err) {
                     blogContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Unable to load posts at this time.</p>';
