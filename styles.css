@@ -98,8 +98,10 @@ img {
 }
 
 /* Unified Section Headers */
-section h2, .about-content h2, .cta-banner h2 {
-    font-size: 3rem !important;
+section h2,
+.about-content h2,
+.cta-banner h2 {
+    font-size: 2.5rem !important;
     color: var(--color-gold) !important;
     margin-bottom: 2rem;
     font-family: var(--font-heading);
@@ -109,8 +111,11 @@ section h2, .about-content h2, .cta-banner h2 {
 }
 
 @media (max-width: 768px) {
-    section h2, .about-content h2, .cta-banner h2 {
-        font-size: 2.2rem !important;
+
+    section h2,
+    .about-content h2,
+    .cta-banner h2 {
+        font-size: 2rem !important;
     }
 }
 
@@ -313,7 +318,7 @@ header {
         flex-direction: column;
         gap: 1.5rem;
     }
-    
+
     .dropdown-menu {
         position: static;
         opacity: 1;
@@ -323,14 +328,15 @@ header {
         border-top: none;
         background-color: transparent;
         padding: 0.5rem 0 0 1rem;
-        display: none; /* Controlled by JS or active class */
+        display: none;
+        /* Controlled by JS or active class */
     }
-    
+
     .dropdown.active .dropdown-menu {
         display: block;
     }
-    
-    .dropdown > a {
+
+    .dropdown>a {
         display: inline-flex !important;
         justify-content: center;
         align-items: center;
@@ -340,7 +346,7 @@ header {
         padding: 0.8rem 1.5rem;
     }
 
-    .dropdown > a::after {
+    .dropdown>a::after {
         content: '▾';
         font-size: 0.9rem;
         position: static;
@@ -379,12 +385,16 @@ header {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 0.8rem 2rem;
+    padding: 1rem 2.5rem;
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     cursor: pointer;
     border-radius: var(--radius);
     text-align: center;
+    transition: var(--transition);
 }
 
 .btn-primary {
@@ -449,7 +459,15 @@ section:nth-of-type(even) h2 {
 }
 
 section:nth-of-type(even) p {
-    color: rgba(250, 247, 242, 0.8);
+    color: rgba(250, 247, 242, 0.9);
+}
+
+/* Section Subtitle / Intro text under h2 */
+section h2+p,
+.about-content h2+p,
+.cta-banner h2+p {
+    font-size: 1.2rem;
+    line-height: 1.8;
 }
 
 /* Ensure buttons stand out on white background */
@@ -483,7 +501,8 @@ section:nth-of-type(odd) .btn-primary:hover {
 
 /* Hero Section - Scrollytelling Implementation */
 .hero-parallax-container {
-    height: 200vh; /* Space for the two-stage scroll */
+    height: 200vh;
+    /* Space for the two-stage scroll */
     position: relative;
 }
 
@@ -510,7 +529,8 @@ section:nth-of-type(odd) .btn-primary:hover {
 
 .hero-content-reveal {
     position: absolute;
-    top: 100vh; /* Starts below the first 100vh fold */
+    top: 100vh;
+    /* Starts below the first 100vh fold */
     width: 100%;
     height: 100vh;
     display: flex;
@@ -522,10 +542,21 @@ section:nth-of-type(odd) .btn-primary:hover {
 }
 
 /* Original individual page styles for backgrounds */
-.hero-home { background-image: url('images/hero-home.png'); }
-.hero-slimming { background-image: url('images/slimming-banner.png'); }
-.hero-plasma { background-image: url('images/hero-plasma.png'); }
-.hero-blog { background-image: url('images/hero-blog.png'); }
+.hero-home {
+    background-image: url('images/hero-home.png');
+}
+
+.hero-slimming {
+    background-image: url('images/slimming-banner.png');
+}
+
+.hero-plasma {
+    background-image: url('images/plasma-fibroblast-banner.png');
+}
+
+.hero-blog {
+    background-image: url('images/hero-blog.png');
+}
 
 .hero-content-reveal h1 {
     font-size: 3rem;
@@ -558,9 +589,22 @@ section:nth-of-type(odd) .btn-primary:hover {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
-    40% {transform: translateX(-50%) translateY(-10px);}
-    60% {transform: translateX(-50%) translateY(-5px);}
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
 }
 
 
