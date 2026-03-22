@@ -279,7 +279,8 @@ header {
     top: 100%;
     left: 0;
     background-color: var(--color-navy-mid);
-    min-width: 220px;
+    min-width: 250px;
+    width: max-content;
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -288,6 +289,12 @@ header {
     padding: 1rem 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     z-index: 1100;
+}
+
+@media (min-width: 769px) {
+    .dropdown-menu li a {
+        white-space: nowrap;
+    }
 }
 
 .dropdown:hover .dropdown-menu {
